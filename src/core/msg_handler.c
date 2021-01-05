@@ -593,7 +593,7 @@ int HandleUspMessage(Usp__Msg *usp, char *controller_endpoint, mtp_reply_to_t *m
             break;
 
         default:
-            MSG_HANDLER_HandleUnknownMsgType(usp, controller_endpoint, mrt);
+           // MSG_HANDLER_HandleUnknownMsgType(usp, controller_endpoint, mrt);
             break;
     }
 
