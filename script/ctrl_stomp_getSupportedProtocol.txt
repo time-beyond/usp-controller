@@ -1,0 +1,1 @@
+msg_type:"GetSupportedProtocol" controller_supported_protocol_versions:"1.0"

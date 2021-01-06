@@ -1,0 +1,1 @@
+msg_type:Delete obj_paths:"Device.LocalAgent.Subscription.[ID==\"test123\"]."

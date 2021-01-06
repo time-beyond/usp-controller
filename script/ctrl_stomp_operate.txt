@@ -1,0 +1,1 @@
+msg_type:"Operate" command:"Device.Reboot()" command_key:"boot123" send_resp:"true"

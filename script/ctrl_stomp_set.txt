@@ -1,0 +1,2 @@
+msg_type:"Set" allow_partial:"true" update_objs{obj_path:"Device.DeviceInfo." {param:"FriendlyName" value:"MyDevicesFriendlyName" required:"true"}} update_objs{obj_path:"Device.LocalAgent.Subscription.[ID==\"test123\"]" {param:"Enable" value:"true"}}
+

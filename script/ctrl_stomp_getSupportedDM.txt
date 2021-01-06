@@ -1,0 +1,1 @@
+msg_type:"GetSupportedDM" obj_paths:"Device." first_level_only:"false" return_commands:"true" return_events:"true" return_params:"true"

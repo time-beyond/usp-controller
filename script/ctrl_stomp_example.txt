@@ -1,2 +1,0 @@
-msg_id:"101" to_id:"proto::Agent" stomp_agent_dest:"/queue/Agent" stomp_instance:"1"
-msg_type:"Get" param_paths:"Device."
