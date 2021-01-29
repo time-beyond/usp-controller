@@ -1170,6 +1170,7 @@ void ReceiveCoapBlock(coap_server_t *cs, coap_server_session_t *css)
     {
         return;
     }
+    printf("%s-----\n",css->last_response.pdu_data);
 
     css->last_block_time = time(NULL);
 
@@ -1179,6 +1180,7 @@ void ReceiveCoapBlock(coap_server_t *cs, coap_server_session_t *css)
     pp.mtp_reply_to.protocol = kMtpProtocol_CoAP;
 
     action_flags = COAP_ParsePdu(buf, len, &pp);
+    printf("%s-----\n",buf);
     if (action_flags != COAP_NO_ERROR)
     {
         goto exit;
@@ -1233,7 +1235,8 @@ exit:
         USP_LOG_Info("Message received at time %s, from host %s over CoAP", time_buf, addr_buf);
 
         // Post complete USP record to the data model thread (as long as the peer address in the 'reply-to' matches that of the received packet)
-        if (IsReplyToValid(css, &pp))
+        //if (IsReplyToValid(css, &pp))
+	
         {
             // Create a copy of the reply-to details, modifying coap_host to be the IP literal peer address to send the response back to
             // (This is necessary as the peer's reply-to may be a hostname which has both IPv4 and IPv6 DNS records. We want to reply back using the same IP version we received on)

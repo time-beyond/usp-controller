@@ -1,4 +1,4 @@
-msg_id:"1" to_id:"proto::Agent1" coap_host:"192.168.1.119" coap_port:"5683" coap_resource:"Agent1"
+msg_id:"1" to_id:"proto::Agent" coap_host:"192.168.37.107" coap_port:"5683" coap_resource:"Agent" reply-to="192.168.37.107"
 msg_type:"GetSupportedProtocol" controller_supported_protocol_versions:"1.0"
 msg_type:GetInstances obj_paths:"Device.LocalAgent.MTP." first_level_only:"false"
 msg_type:"Get" param_paths:"Device.LocalAgent.MTP.*." param_paths:"Device.LocalAgent.Controller.*." param_paths:"Device.LocalAgent." param_paths:"Device.LocalAgent.MTP.1." param_paths:"Device.LocalAgent.MTP.*."

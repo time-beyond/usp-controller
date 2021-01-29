@@ -1,17 +1,30 @@
 #!/bin/sh
+
+function help()
+{
+	echo '=============================================================='
+	echo "This shell is to send spec msg to a spec agent"
+	echo "user should known the queue names( or EID if this parameter can be used) of the existing agents"
+	echo "=============================================================="
+}
+
+
+
 msg_id=101
-endpoint=` obuspa  -v4 -f my_usp.db -r factory_reset_example.txt -i eno1 -c get "Device.LocalAgent.Controller.1.EndpointID"|awk -F'=> ' '{print $2}' `
-echo $endpoint
-queue=` obuspa  -v4 -f my_usp.db -r factory_reset_example.txt -i eno1 -c get "Device.LocalAgent.Controller.1.MTP.1.STOMP.Destination"|awk -F'=> ' '{print $2}' `
+endpoint=$3
+queue=$2
 connectionid=1
 msg="msg_id:\"$msg_id\" to_id:\"$endpoint\" stomp_agent_dest:\"$queue\" stomp_instance:\"$connectionid\""
 
-source script/func.sh
+source ./func.sh
 
-if [ $# -ne 1 ]
+help
+
+
+if [ $# -ne 3 ]
 then
 	echo "Missing parameter"
-	echo "eg:sh send_message_to_agent.sh get"
+	echo "$2 <to which agent queue> $3<to endpointid>"
 	echo "support 'get'"
 	echo "        'getSupportedDM'"
 	echo "        'add'"

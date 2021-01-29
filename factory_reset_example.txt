@@ -17,14 +17,16 @@
 #
 # The following parameters will definitely need modifying
 #
-Device.LocalAgent.EndpointID "proto::Controller"
+Device.LocalAgent.EndpointID "proto::Controller1"
 Device.LocalAgent.Controller.1.EndpointID "proto::Agent"
+Device.LocalAgent.Controller.2.EndpointID "proto::WLI-4227"
 Device.STOMP.Connection.1.Host "nanx-usp.calix.local"
 Device.STOMP.Connection.1.Username "tr369"
 Device.STOMP.Connection.1.Password "tr369"
 
-Device.LocalAgent.MTP.1.STOMP.Destination "/queue/Controller"
+Device.LocalAgent.MTP.1.STOMP.Destination "/queue/Controller1"
 Device.LocalAgent.Controller.1.MTP.1.STOMP.Destination "/queue/Agent"
+Device.LocalAgent.Controller.2.MTP.1.STOMP.Destination "/queue/Agent"
 #
 # The following parameters may be modified
 #
@@ -44,6 +46,18 @@ Device.LocalAgent.Controller.1.MTP.1.Alias "cpe-1"
 Device.LocalAgent.Controller.1.MTP.1.Enable "true"
 Device.LocalAgent.Controller.1.MTP.1.Protocol "STOMP"
 Device.LocalAgent.Controller.1.MTP.1.STOMP.Reference "Device.STOMP.Connection.1"
+Device.LocalAgent.Controller.2.Alias "cpe-1"
+Device.LocalAgent.Controller.2.Enable "true"
+Device.LocalAgent.Controller.2.AssignedRole "Device.LocalAgent.ControllerTrust.Role.1"
+Device.LocalAgent.Controller.2.PeriodicNotifInterval "86400"
+Device.LocalAgent.Controller.2.PeriodicNotifTime "0001-01-01T00:00:00Z"
+Device.LocalAgent.Controller.2.USPRetryMinimumWaitInterval "5"
+Device.LocalAgent.Controller.2.USPRetryIntervalMultiplier "2000"
+Device.LocalAgent.Controller.2.ControllerCode ""
+Device.LocalAgent.Controller.2.MTP.1.Alias "cpe-1"
+Device.LocalAgent.Controller.2.MTP.1.Enable "true"
+Device.LocalAgent.Controller.2.MTP.1.Protocol "STOMP"
+Device.LocalAgent.Controller.2.MTP.1.STOMP.Reference "Device.STOMP.Connection.1"
 Device.STOMP.Connection.1.Alias "cpe-1"
 Device.STOMP.Connection.1.Enable "true"
 Device.STOMP.Connection.1.Port "61613"
